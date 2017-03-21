@@ -14,7 +14,7 @@ set ORACLE=oracle
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 cls
 call :HL
-set /p OK=[ENTER]‚ÅA[%USERNAME%@%COMPUTERNAME%]‚Ìƒ`ƒFƒbƒN‚ðŠJŽn:
+set /p OK=[ENTER]ã§ã€[%USERNAME%@%COMPUTERNAME%]ã®ãƒã‚§ãƒƒã‚¯ã‚’é–‹å§‹:
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo. 
 call :HL
@@ -22,7 +22,7 @@ call :HL
 echo TEMP=%TEMP%
 echo TMP=%TMP%
 
-echo ŠÂ‹«•Ï”TEMP‚ÆATMP‚ª“¯ˆÊ’u‚ðŽ¦‚µ‚Ä‚¢‚é‚±‚ÆB
+echo ç’°å¢ƒå¤‰æ•°TEMPã¨ã€TMPãŒåŒä½ç½®ã‚’ç¤ºã—ã¦ã„ã‚‹ã“ã¨ã€‚
 call :next
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo. 
@@ -31,9 +31,9 @@ call :HL
 ipconfig
 
 echo.
-echo ƒlƒbƒgƒ[ƒNƒAƒ_ƒvƒ^‚ÌŠm”F
-echo %PUBLIC_NAME%‚ªA%NODE1_PUBLIC_IP%A%NODE2_PUBLIC_IP%‚Å‚ ‚é‚±‚ÆB
-echo %PRIVATE_NAME%‚ªA%NODE1_PRIVATE_IP%A%NODE2_PRIVATE_IP%‚Å‚ ‚é‚±‚ÆB
+echo ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ã‚¢ãƒ€ãƒ—ã‚¿ã®ç¢ºèª
+echo %PUBLIC_NAME%ãŒã€%NODE1_PUBLIC_IP%ã€%NODE2_PUBLIC_IP%ã§ã‚ã‚‹ã“ã¨ã€‚
+echo %PRIVATE_NAME%ãŒã€%NODE1_PRIVATE_IP%ã€%NODE2_PRIVATE_IP%ã§ã‚ã‚‹ã“ã¨ã€‚
 call :next
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
@@ -42,8 +42,8 @@ call :HL
 reg query HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters /v DisableDHCPMediaSense
 
 echo.
-echo Windows‚ÌƒƒfƒBƒAŒŸo‹@”\‚ð–³Œø
-echo DisableDHCPMediaSense    REG_DWORD    0x1‚Å‚ ‚é‚±‚ÆB
+echo Windowsã®ãƒ¡ãƒ‡ã‚£ã‚¢æ¤œå‡ºæ©Ÿèƒ½ã‚’ç„¡åŠ¹
+echo DisableDHCPMediaSense    REG_DWORD    0x1ã§ã‚ã‚‹ã“ã¨ã€‚
 call :next
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
@@ -52,29 +52,29 @@ call :HL
 netsh advfirewall show allprofile | more
 
 echo.
-echo firewall‚ÌŠm”F
-echo Šeƒvƒƒtƒ@ƒCƒ‹‚ÌState‚ªƒIƒt‚Å‚ ‚é‚±‚ÆB
+echo firewallã®ç¢ºèª
+echo å„ãƒ—ãƒ­ãƒ•ã‚¡ã‚¤ãƒ«ã®StateãŒã‚ªãƒ•ã§ã‚ã‚‹ã“ã¨ã€‚
 call :next
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
 call :HL
-echo Žž“¯Šú(w32tm)Šm”F
+echo æ™‚åˆ»åŒæœŸ(w32tm)ç¢ºèª
 
 net start w32time
 w32tm /query /peers
 
 echo.
-echo Žž“¯Šú‚ÌŠm”F šššš step,slewƒ‚[ƒh‚ÌŠm”F‚ªŽdŠ| šššš
+echo æ™‚åˆ»åŒæœŸã®ç¢ºèª â˜…â˜…â˜…â˜… step,slewãƒ¢ãƒ¼ãƒ‰ã®ç¢ºèªãŒä»•æŽ› â˜…â˜…â˜…â˜…
 call :next
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
 call :HL
-echo ORACLEƒ†[ƒU[Šm”F
+echo ORACLEãƒ¦ãƒ¼ã‚¶ãƒ¼ç¢ºèª
 
 net user %ORACLE%
 
 echo.
-echo ƒ†[ƒU[(%USERNAME%)‚ªAAdministratorsƒOƒ‹[ƒv‚É‘®‚µ‚Ä‚¢‚é‚±‚Æ
+echo ãƒ¦ãƒ¼ã‚¶ãƒ¼(%USERNAME%)ãŒã€Administratorsã‚°ãƒ«ãƒ¼ãƒ—ã«å±žã—ã¦ã„ã‚‹ã“ã¨
 call :next
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
@@ -82,7 +82,7 @@ echo.
 reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA
 
 echo.
-echo LUA‚ª–³Œø‚Å‚ ‚é‚±‚Æ
+echo LUAãŒç„¡åŠ¹ã§ã‚ã‚‹ã“ã¨
 call :next
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
@@ -95,7 +95,7 @@ call :next
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
 
-set /p OK=[ENTER]‚ÅAregedit‚ðŽÀsBuƒtƒ@ƒCƒ‹ - ƒlƒbƒgƒ[ƒN ƒŒƒWƒXƒgƒŠ‚Ö‚ÌÚ‘±v‚ÅAƒŠƒ‚[ƒgƒm[ƒh‚ðÝ’è
+set /p OK=[ENTER]ã§ã€regeditã‚’å®Ÿè¡Œã€‚ã€Œãƒ•ã‚¡ã‚¤ãƒ« - ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã¸ã®æŽ¥ç¶šã€ã§ã€ãƒªãƒ¢ãƒ¼ãƒˆãƒŽãƒ¼ãƒ‰ã‚’è¨­å®š
 regedit
 
 echo.
@@ -104,19 +104,19 @@ call :next
 echo.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-echo I—¹
+echo çµ‚äº†
 exit /b 0
 goto :EOF
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :HL
-echo ŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸŸ
+echo --------------------------------------------------------------------------------
 goto :EOF
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :NEXT
 echo.
 call :HL
-set /p OK=[ENTER]‚ÅAŽŸ‚Ö:
+set /p OK=[ENTER]ã§ã€æ¬¡ã¸:
 cls
 goto :EOF
 
