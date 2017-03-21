@@ -64,7 +64,17 @@ net start w32time
 w32tm /query /peers
 
 echo.
-echo 時刻同期の確認 ★★★★ step,slewモードの確認が仕掛 ★★★★
+echo 時刻同期の確認 
+call :next
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo.
+call :HL
+echo slewモードの確認
+reg query HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config / MaxPosPhaseCorrection
+reg query HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config / MaxNegPhaseCorrection
+reg query HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config / MaxAllowedPhaseOffset
+echo.
+echo 時刻同期slewモードの確認
 call :next
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
